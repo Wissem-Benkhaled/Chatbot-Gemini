@@ -1,0 +1,208 @@
+.main{
+    flex:1;
+    min-height: 100vh;
+    padding-bottom:15vh ;
+    position: relative;
+}
+
+.main .nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 22px;
+    padding: 20px;
+    color: #585858;
+}
+
+.main .nav img{
+    width: 40px;
+    border-radius: 50%;
+}
+
+.main .main_container{
+    max-width: 900px;
+    margin: auto;
+}
+
+.main .greet{
+    margin: 50px 0px;
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.main .greet span{
+    background: -webkit-linear-gradient(16deg, #0d6add, #e2341a);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color: transparent;
+}   
+
+.main .cards{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+} 
+
+.main .card{
+    height: 200px;
+    background-color: #f0f4f9;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+} 
+.main .card img{
+    width: 35px;
+    background-color: white;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.main .card:hover{
+    background-color: #dfe4df;
+}
+.main .card p{
+    font-size: 18px;
+    color: #585858;
+}
+
+.main_bottom{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+.search_box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    border-radius: 50px;
+    padding: 10px 20px;
+}
+
+.search_box img{
+    width: 24px ;
+    cursor: pointer;
+}
+.search_box textarea{
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    outline: none;
+    font-size: 20px;
+    padding: 8px;
+}
+
+.search_box div{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main .bottom_info {
+    font-size: 13px;
+    margin:25px auto;
+    text-align: center;
+    font-weight: 400;
+}
+
+
+
+.gemini-loader {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+.gemini-icon {
+    width: 50px; 
+    height: 50px; 
+    animation: spin 1s linear infinite; 
+}
+
+
+
+/* Container for the entire chat */
+.chat_output {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between messages */
+    padding: 15px;
+    border-radius: 8px;
+    max-height: 80vh; /* Or set a fixed height with overflow-y: auto for scrolling */
+    overflow-y: auto; /* Enable scrolling if content exceeds height */
+}
+
+/* Base message styles */
+.user_msg,
+.gemini_msg {
+    max-width: 70%; /* Messages won't take up full width */
+    padding: 10px 14px;
+    border-radius: 18px; /* Rounded corners */
+    line-height: 1.4;
+    word-wrap: break-word; /* Prevent long words from overflowing */
+}
+
+/* User messages (typically on the right, blue) */
+.user_msg {
+    align-self: flex-end; /* Pushes to the right */
+    background-color: #007bff; /* A typical blue for user messages */
+    color: white;
+    margin-left: auto; /* Ensures it stays on the right even with max-width */
+}
+
+/* Gemini/AI messages (typically on the left, grey/light blue) */
+.gemini_msg {
+    align-self: flex-start; /* Pushes to the left */
+    background-color: #f0f2f5; /* Light grey for incoming messages */
+    color: #050505; /* Dark text for contrast */
+    margin-right: auto; /* Ensures it stays on the left even with max-width */
+}
+
+/* Hide the sender's name if you want a cleaner bubble look */
+.user_msg strong,
+.gemini_msg strong {
+    display: none; /* Hide the sender name */
+}
+
+/* Optional: If you want to keep the name, style it differently */
+/* .gemini_msg strong {
+    color: #4CAF50; 
+    font-size: 0.9em;
+    margin-bottom: 5px;
+    display: block;
+}
+.user_msg strong {
+    display: none; // You usually don't show "You" in a Messenger bubble
+} */
+
+.gemini-loader {
+    align-self: flex-start; /* Or center, depending on where you want the loader to appear */
+    padding: 10px 14px;
+    background-color: #e4e6eb; /* Match incoming message background */
+    border-radius: 18px;
+    width: fit-content; 
+    margin-right: auto;
+}
+
+.gemini-icon {
+    width: 30px; 
+    
+    height: 30px; 
+    
+    animation: spin 1s linear infinite; 
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
